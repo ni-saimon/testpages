@@ -14,10 +14,18 @@ class Automation:
         self.driver.get("https://testpages.herokuapp.com/")
         assert self.driver.find_element(By.XPATH, "/html/body/div/h1").text == "Test Pages For Automating"
 
+    def basic_web_page_example(self):
+        self.driver.find_element(By.ID, "basicpagetest").click()
+        print(self.driver.find_element(By.CSS_SELECTOR, "h1").text)
+        print(self.driver.find_element(By.CSS_SELECTOR, "div[class='explanation'] p").text)
+        print(self.driver.find_element(By.CSS_SELECTOR, "p[id='para1']").text)
+        print(self.driver.find_element(By.CSS_SELECTOR, "p[id='para2']").text)
+
     def shutdown(self):
         self.driver.close()
 
 
 o = Automation()
 o.setup()
+o.basic_web_page_example()
 # o.shutdown()
