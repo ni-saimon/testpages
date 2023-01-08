@@ -4,6 +4,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
 
+def wait():
+    while True:
+        pass
+
+
 class Automation:
 
     def __init__(self):
@@ -28,4 +33,5 @@ class Automation:
 o = Automation()
 o.setup()
 o.basic_web_page_example()
+wait()
 # o.shutdown()
